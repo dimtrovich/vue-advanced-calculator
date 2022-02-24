@@ -1,20 +1,55 @@
 {
   "name": "vue-advanced-calculator",
+  "description": "An advanced scientific calculator for Vue.js",
   "version": "0.1.0",
   "license": "MIT",
   "author": {
     "name": "Dimitri Sitchet Tomkeu",
     "email": "devcode.dst@gmail.com"
   },
+  "main": "dist/vue-advanced-calculator.js",
+  "files": [
+    "dist",
+    "types",
+    "src"
+  ],
+  "typings": "types/index.d.ts",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "cross-env FULL_BUNDLE=true webpack -p --progress --config webpack.build.config.js"
   },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "calculator",
+    "converter"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DimitriSitchet/vue-advanced-calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DimitriSitchet/vue-advanced-calculator/issues"
+  },
+  "homepage": "https://github.com/DimitriSitchet/vue-advanced-calculator#readme",
   "dependencies": {
-  },
+   },
   "devDependencies": {
-    "vue": "^2.6.11",
+	"babel-core": "^6.22.1",
+    "babel-eslint": "^8.0.3",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-istanbul": "^4.1.5",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.22.0",
+    "babel-register": "^6.22.0",
     "@vue/cli-service": "~4.5.15",
-    "vue-template-compiler": "^2.6.11"
+    "cross-env": "^5.1.1",
+    "css-loader": "^0.28.8",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "vue": "^2.6.11",
+    "vue-loader": "^13.6.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^3.10.0"
   }
 }
