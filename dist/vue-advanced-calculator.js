@@ -519,18 +519,20 @@ const data = {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Calculator_vue__ = __webpack_require__(5);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "VueAdvancedCalculator", function() { return __WEBPACK_IMPORTED_MODULE_0__Calculator_vue__["a"]; });
 
-const VueAdvancedCalcultator = {
+const Calculator = {
   install(Vue) {
     Vue.component('vue-advanced-calcultator', __WEBPACK_IMPORTED_MODULE_0__Calculator_vue__["a" /* default */]);
   }
 };
 // Automatic installation if Vue has been added to the global scope.
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(VueAdvancedCalcultator);
+  window.Vue.use(Calculator);
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (VueAdvancedCalcultator);
+/* harmony default export */ __webpack_exports__["default"] = (Calculator);
+
 
 /***/ }),
 /* 5 */

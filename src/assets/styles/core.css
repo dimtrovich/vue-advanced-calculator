@@ -3,8 +3,8 @@
   font-size: 14px;
 }
 .vac-sidebar {
-  width: 60%;
-  left: -3500px;
+  width: 0;
+  left: 0;
   position: absolute;
   height: 100%;
   z-index: 999;
@@ -15,7 +15,7 @@
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .vac-sidebar.active {
-  left: 0;
+  width: 60%;
 }
 .vac-sidebar .vac-sidebar-title {
   color: #42b983;
