@@ -1,0 +1,83 @@
+#vac {
+  height: 70vh;
+  font-size: 14px;
+}
+.vac-sidebar {
+  width: 60%;
+  left: -3500px;
+  position: absolute;
+  height: 100%;
+  z-index: 999;
+  background: #f0f0f3;
+  color: #fff;
+  transition: all ease-in-out 0.3s;
+  overflow-y: auto;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+}
+.vac-sidebar.active {
+  left: 0;
+}
+.vac-sidebar .vac-sidebar-title {
+  color: #42b983;
+}
+.vac-dismiss-btn {
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  background-color: #8e9099;
+  top: 15px;
+  right: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.vac-dismiss-btn:hover {
+  background: #fff;
+  color: #42b983;
+}
+.vac-sidebar-menu {
+  height: 100%;
+  overflow-y: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #d6dddd;
+}
+.vac-overlay {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+  opacity: 0;
+  display: none;
+  transition: all 0.5s ease-in-out;
+}
+.vac-overlay.active {
+  display: block;
+  opacity: 1;
+}
+.vac-sidebar-menu li a {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: gray;
+  text-decoration: none;
+}
+.vac-sidebar-menu li a.active,
+.vac-sidebar-menu li a:hover {
+  color: #42b983;
+  background: #fff;
+}
+.vac-sidebar-menu li i {
+  width: 10%;
+  margin-right: 5px;
+}
+.vac-screen {
+  height: 10vh;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: -4px -4px 7.5px rgba(255, 255, 255, 0.7), 5px 5px 5px rgba(0, 0, 0, 0.3), inset 4px 4px 7.5px rgba(255, 255, 255, 0.7), inset 5px 5px 5px rgba(0, 0, 0, 0.3);
+}

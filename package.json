@@ -1,15 +1,19 @@
 {
   "name": "vue-advanced-calculator",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Dimitri Sitchet Tomkeu",
+    "email": "devcode.dst@gmail.com"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "vue": "^2.6.11"
   },
   "devDependencies": {
+    "vue": "^2.6.11",
     "@vue/cli-service": "~4.5.15",
     "vue-template-compiler": "^2.6.11"
   }
