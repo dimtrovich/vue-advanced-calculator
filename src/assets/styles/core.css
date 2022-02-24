@@ -77,7 +77,9 @@
 .vac-screen {
   color: #000;
   height: 10vh;
+  width: 95%;
   padding: 10px 20px;
+  margin: auto auto;
   margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: -4px -4px 7.5px rgba(255, 255, 255, 0.7), 5px 5px 5px rgba(0, 0, 0, 0.3), inset 4px 4px 7.5px rgba(255, 255, 255, 0.7), inset 5px 5px 5px rgba(0, 0, 0, 0.3);
