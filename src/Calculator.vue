@@ -1,5 +1,5 @@
 <template>
-	<div id="vac" class="position-relative w-100 border rounded" tabindex="-1">
+	<div :id="id" class="vac-container position-relative w-100 border rounded" tabindex="-1">
 		<div class="vac-overlay" :class="{'active': open_sidebar}" @click="open_sidebar = !open_sidebar"></div>
 		<nav class="vac-sidebar d-flex flex-column justify-content-between" :class="{'active': open_sidebar}">
 			<div class="vac-dismiss-btn text-center rounded-circle position-absolute" @click="open_sidebar = !open_sidebar"><i class="fas fa-times"></i></div>
@@ -55,8 +55,9 @@ export default {
 	},
 	name: "VueAdvancedCalculator",
 	props: {
+		id: {type: String, default: 'vac-' + (new Date).getTime() },
 		title: {type: String, default: 'Vue Advanced Calculator'},
-		description: {type: String, default: 'An advanced calculator for Vue.js'},
+		description: {type: String, default: 'An advanced scientific calculator for Vue.js'},
 		defaultMode: {type: String, default: 'standard'},
 		locale: { type: String, default: 'fr'}
 	},

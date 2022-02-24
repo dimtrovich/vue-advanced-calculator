@@ -95,29 +95,31 @@ export default {
 		 * Stimulation de l'utilisation du clavier
 		 */
 		keyboardPatch() {
-			document.getElementById('vac').addEventListener('keydown', (e) => {
-				const key = e.key
-				if (this.isNumber(key) || ['(', ')', '.'].includes(key)) {
-					this.addElement(key)
-				}
-				if (this.operators.includes(key)) {
-					this.addOperator(key)
-				}
-				if (key == 'Backspace') {
-					this.backspace()
-				}
-				if (key == 'Enter') {
-					this.equals()
-				}
-				if (key == '²') {
-					this.sqr()
-				}
-				if (key == '%') {
-					this.percent()
-				}
-				if (key.toLowerCase() == 'c') {
-					this.clear()
-				}
+			document.querySelectorAll('.vac-container[tabindex="-1"]').forEach((el) => {
+				el.addEventListener('keydown', (e) => {
+					const key = e.key
+					if (this.isNumber(key) || ['(', ')', '.'].includes(key)) {
+						this.addElement(key)
+					}
+					if (this.operators.includes(key)) {
+						this.addOperator(key)
+					}
+					if (key == 'Backspace') {
+						this.backspace()
+					}
+					if (key == 'Enter') {
+						this.equals()
+					}
+					if (key == '²') {
+						this.sqr()
+					}
+					if (key == '%') {
+						this.percent()
+					}
+					if (key.toLowerCase() == 'c') {
+						this.clear()
+					}
+				})
 			})
 		},
 
