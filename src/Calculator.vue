@@ -40,14 +40,20 @@
 				</div>
 				<button class="btn btn-sm btn-light"><i class="fa fa-undo"></i></button>
 			</div>
+
+			<standard :locale="locale" v-if="mode == 'standard'" />
 		</div>
 	</div>
 </template>
 
 <script>
+import Standard from './components/Standard.vue'
 import translator from './utils/translations/translator'
 export default {
-  	name: "VueAdvancedCalculator",
+  	components: { 
+		  Standard 
+	},
+	name: "VueAdvancedCalculator",
 	props: {
 		title: {type: String, default: 'Vue Advanced Calculator'},
 		description: {type: String, default: 'An advanced calculator for Vue.js'},
