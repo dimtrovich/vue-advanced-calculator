@@ -1,5 +1,5 @@
 <template>
-	<div id="vac" class="position-relative w-100 border rounded">
+	<div id="vac" class="position-relative w-100 border rounded" tabindex="-1">
 		<div class="vac-overlay" :class="{'active': open_sidebar}" @click="open_sidebar = !open_sidebar"></div>
 		<nav class="vac-sidebar d-flex flex-column justify-content-between" :class="{'active': open_sidebar}">
 			<div class="vac-dismiss-btn text-center rounded-circle position-absolute" @click="open_sidebar = !open_sidebar"><i class="fas fa-times"></i></div>

@@ -44,7 +44,7 @@
 				<button class="btn btn-light" @click="addElement(0)">0</button>
 				<button class="btn btn-light" @click="addElement('.')">.</button>
 				<button class="btn btn-light" @click="addOperator('+')">+</button>
-				<button class="btn btn-primary" @click="equals()">=</button>
+				<button class="btn btn-light equals" @click="equals()">=</button>
 			</div>
 		</div>
     </div>
@@ -69,6 +69,9 @@ export default {
 			return this.current[this.current.length - 1]
 		},
 	},
+	mounted() {
+		this.keyboardPatch()
+	},
 	methods: {
 		/**
 		 * Effectue des traductions dans la langue choisie
@@ -88,12 +91,41 @@ export default {
 		isNumber(x) {
 			return !isNaN(parseFloat(x)) && isFinite(x);
 		},
+		/**
+		 * Stimulation de l'utilisation du clavier
+		 */
+		keyboardPatch() {
+			document.getElementById('vac').addEventListener('keydown', (e) => {
+				const key = e.key
+				if (this.isNumber(key) || ['(', ')', '.'].includes(key)) {
+					this.addElement(key)
+				}
+				if (this.operators.includes(key)) {
+					this.addOperator(key)
+				}
+				if (key == 'Backspace') {
+					this.backspace()
+				}
+				if (key == 'Enter') {
+					this.equals()
+				}
+				if (key == '²') {
+					this.sqr()
+				}
+				if (key == '%') {
+					this.percent()
+				}
+				if (key.toLowerCase() == 'c') {
+					this.clear()
+				}
+			})
+		},
 
 		addElement(element) {
 			if (this.current == '0' && element != '.') {
 				this.current = ''
 			}
-			if (this.operation != null && this.operation != '' && !this.operators.includes(this.current_last)) {
+			if (this.operation != null && this.operation != '' && this.isNumber(this.current)) {
 				this.current = ''
 				this.operation = null
 			}
@@ -144,22 +176,29 @@ export default {
 		},
 
 		sqr() {
-			this.operation = `sqr(${this.current})`
-			this.current = this.current * this.current
+			if (this.isNumber(this.current)) {
+				this.operation = `sqr(${this.current})`
+				this.current = this.current * this.current
+			}
 		},
 		sqrt() {
-			this.operation = `√(${this.current})`
-			this.current = Math.sqrt(this.current);
+			if (this.isNumber(this.current)) {
+				this.operation = `√(${this.current})`
+				this.current = Math.sqrt(this.current);
+			}
 		},
 		percent() {
-			this.operation = `${this.current}%`
-		  	this.current = this.current / 100;
+			if (this.isNumber(this.current)) {
+				this.operation = `${this.current}%`
+		  		this.current = this.current / 100;
+			}
 		},
 		inverse() {
-			this.operation = `1/(${this.current})`
-		  	this.current = 1 / this.current;
+			if (this.isNumber(this.current)) {
+				this.operation = `1/(${this.current})`
+		  		this.current = 1 / this.current;
+			}
 		},
-		
 	}
 }
 </script>

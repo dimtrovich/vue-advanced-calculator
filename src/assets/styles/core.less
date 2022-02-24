@@ -89,16 +89,14 @@
 .vac-screen {
 	color: #000;
 	height: 10vh;
-	width: 95%;
+	width: 97%;
     padding: 10px 20px;
 	margin: auto auto;
 	margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: -4px -4px 7.5px rgba(255,255,255,.7),
-                5px 5px 5px rgba(0,0,0, .3),
-                inset 4px 4px 7.5px rgba(255,255,255,.7),
-                inset 5px 5px 5px rgba(0,0,0, .3);
-
+    box-shadow: inset 4px 4px 7.5px rgba(0,0,0,.1),
+                inset -4px -4px 7.5px rgba(0,0,0,.1);
+                
 	.vac-screen-operation {
 		height: 20px;
 		font-size: .9em;
@@ -108,7 +106,9 @@
 		font-weight: bold;
 	}
 }
-.vac-buttons .btn-primary {
+.vac-buttons .btn.equals {
 	background-color: #colors[primary];
+	color: #fff;
+	font-weight: bold;
 	border-color: #colors[primary];
 }
