@@ -1,7 +1,7 @@
 import VueAdvancedCalculator from './Calculator.vue'
 const Calculator = {
   install (Vue) {
-    Vue.component('vue-advanced-calcultator', VueAdvancedCalculator)
+    Vue.component('vue-advanced-calculator', VueAdvancedCalculator)
   }
 }
 // Automatic installation if Vue has been added to the global scope.

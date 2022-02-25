@@ -523,7 +523,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 const Calculator = {
   install(Vue) {
-    Vue.component('vue-advanced-calcultator', __WEBPACK_IMPORTED_MODULE_0__Calculator_vue__["a" /* default */]);
+    Vue.component('vue-advanced-calculator', __WEBPACK_IMPORTED_MODULE_0__Calculator_vue__["a" /* default */]);
   }
 };
 // Automatic installation if Vue has been added to the global scope.
