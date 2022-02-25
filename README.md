@@ -16,6 +16,6 @@ An advanced scientific calculator for Vue.js
 Vue-advanced-calculator est composant vuejs avec **aucune dependance externe** qui vous permet de disposer d'une calculatrice puissance dans votre application sans vous cassez la tête. 
 
 ## Demos:
-Basic [demo](https://jsfiddle.net/bt5dhqtf/97/)
+Basic [demo](https://jsfiddle.net/Dimtrovich/xpegj9ys/12/)
 
 # [Documentation](https://dimtrovich.github.io/vue-advanced-calculator)

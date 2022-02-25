@@ -66,28 +66,7 @@ props: {
 ```
 
 # Demos
-Basic [demo](https://jsfiddle.net/bt5dhqtf/97/)
-
-# Playground
-
-## Simple
-<vuep template="#simpledemo"></vuep>
-
-<script v-pre type="text/x-template" id="simpledemo">
-<template>
-	<div class="col-3">
-	  	<vue-advanced-calculator title="Demo calculator" description="Just for demo" />
-	</div>
-</template>
-
-<script>
-  Vue.use(VueAdvancedCalculaor)
-  export default {
-    
-  }
-</script>
-</script>
-
+Basic [demo](https://jsfiddle.net/Dimtrovich/xpegj9ys/12/)
 
 # Contribution
 1. Clonez le depôt
