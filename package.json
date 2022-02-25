@@ -1,7 +1,7 @@
 {
   "name": "vue-advanced-calculator",
   "description": "An advanced scientific calculator for Vue.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "author": {
     "name": "Dimitri Sitchet Tomkeu",
@@ -26,12 +26,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DimitriSitchet/vue-advanced-calculator.git"
+    "url": "git+https://github.com/dimtrovich/vue-advanced-calculator.git"
   },
   "bugs": {
-    "url": "https://github.com/DimitriSitchet/vue-advanced-calculator/issues"
+    "url": "https://github.com/dimtrovich/vue-advanced-calculator/issues"
   },
-  "homepage": "https://github.com/DimitriSitchet/vue-advanced-calculator#readme",
+  "homepage": "https://dimtrovich.github.io/vue-advanced-calculator",
   "dependencies": {
    },
   "devDependencies": {
