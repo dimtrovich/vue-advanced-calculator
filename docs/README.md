@@ -1,7 +1,8 @@
 An advanced scientific calculator for Vue.js
 
 Vue-advanced-calculator est composant vuejs avec **aucune dependance externe** qui vous permet de disposer d'une calculatrice puissance dans votre application sans vous cassez la tête. 
-C'est vrai que j'ai dis qu'il n'a pas besoin de dependance mais, le style est basé sur bootstrap 4, donc il faudra l'avoir :)
+
+C'est vrai que j'ai dis qu'il n'a pas besoin de dependance mais, le style est basé sur bootstrap 4, donc il faudra l'avoir et pour avoir les icônes n'oubliez pas font-awesome 😅
 
 
 # Usage
@@ -9,7 +10,7 @@ C'est vrai que j'ai dis qu'il n'a pas besoin de dependance mais, le style est ba
 ## NPM
 `npm install vue-advanced-calculator`
 
-## Utilisation de la balise <script>
+## Utilisation de la balise script
 Téléchargez les fichiers css et js à partir du dossier `dist` ou utilisez directement celui disponible sur github
 ```html
 <link rel="stylesheet" href="https://unpkg.com/vue-advanced-calculator/dist/vue-advanced-calculator.min.css">
@@ -88,7 +89,7 @@ Basic [demo](https://jsfiddle.net/bt5dhqtf/97/)
 </script>
 
 
-## Contribution
+# Contribution
 1. Clonez le depôt
 2. executez `npm install`
 3. `npm run serve` pour lancer l'exemple de developpement
