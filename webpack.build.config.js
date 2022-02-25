@@ -35,7 +35,7 @@ module.exports = [
 		output: {
 			path: path.resolve(__dirname, './dist'),
 			filename: "vue-advanced-calculator.js",
-			library: "VueAdvancedCalcultator",
+			library: "VueAdvancedCalculator",
 			libraryTarget: "umd"
 		},
 		module: {
