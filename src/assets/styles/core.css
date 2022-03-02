@@ -1,5 +1,6 @@
 .vac-container {
-  height: 70vh;
+  min-height: 70vh;
+  padding-bottom: 0.5em;
   font-size: 14px;
 }
 .vac-sidebar {
@@ -91,6 +92,14 @@
 .vac-screen .vac-screen-result {
   font-size: 1.25em;
   font-weight: bold;
+}
+.vac-buttons {
+  width: 85%;
+  margin: auto auto;
+}
+.vac-buttons .btn {
+  min-width: 57.5px;
+  margin: 2.5px;
 }
 .vac-buttons .btn.equals {
   background-color: #42b983;
