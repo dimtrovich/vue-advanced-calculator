@@ -1,10 +1,13 @@
+import translator from '../utils/translations/translator'
+
 export default {
 	props: {
 		locale: { type: String, required: true },
+		precision: { type: Number, default: 15}
 	},
 	data: () => ({
 		current: '0',
-		result: 0,
+		finished: false,
 		operation: null,
 
 		operators: ['/','*','-','+']
@@ -13,11 +16,26 @@ export default {
 		current_last() {
 			return this.current[this.current.length - 1]
 		},
+		result() {
+			if (!this.finished || !this.isNumber(this.current)) {
+				return this.current;
+			}
+			return this.formatNumber(this.current, this.precision)
+		}
 	},
 	mounted() {
 		this.keyboardPatch()
 	},
 	methods: { 
+		/**
+		 * Effectue des traductions dans la langue choisie
+		 * 
+		 * @param {String} key 
+		 * @return {String}
+		 */
+		 __vac_translate(key) {
+			return translator(key, this.locale)
+		},
 		/**
 		 * Verifie qu'un element est un nombre
 		 * 
@@ -26,6 +44,22 @@ export default {
 		 */
 		 isNumber(x) {
 			return !isNaN(parseFloat(x)) && isFinite(x);
+		},
+		/**
+		 * Formate un nombre pour etre plus facile à lire
+		 * 
+		 * @param {Number} x 
+		 * @param {Integer} precision 
+		 * @example 12345.67 ==> 12 345.67
+		 */
+        formatNumber(x, precision = 5) {
+			const parts = x.toString().split('.')
+			const result = []
+			result.push(parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " "))
+			if (parts[1]) {
+				result.push(parts[1].substring(0, precision))
+			}
+			return result.join('.')
 		},
 		/**
 		 * Stimulation de l'utilisation du clavier
@@ -63,15 +97,35 @@ export default {
 			if (this.current == '0' && element != '.') {
 				this.current = ''
 			}
+			if (['-Infinity', 'NaN', 'Infinity'].includes(this.current.toString())) {
+				this.operation = null
+				this.current = ''
+			}
 			if (this.operation != null && this.operation != '' && this.isNumber(this.current)) {
 				this.current = ''
 				this.operation = null
 			}
+			this.finished = false;
 			this.current += ''+element
 		},
+		addOperator(operator) {
+			if (['-Infinity', 'NaN', 'Infinity'].includes(this.current.toString())) {
+				this.operation = null
+				this.current = ''
+			}
+			if (this.operators.includes(operator)) {
+				if (this.operators.includes(this.current_last)) {
+					this.backspace()
+				}
+				this.current += operator
+			}
+			this.finished = false;
+		},
+		
 		clear() {
 			this.operation = null;
 			this.current = '0';
+			this.finished = false;
 		},
 		backspace() {
 			if (this.isNumber(this.current) || typeof this.current != 'string') {
@@ -82,14 +136,7 @@ export default {
 			if (this.current == '') {
 				this.current = '0'
 			}
-		},
-		addOperator(operator) {
-			if (this.operators.includes(operator)) {
-				if (this.operators.includes(this.current_last)) {
-					this.backspace()
-				}
-				this.current += operator
-			}
+			this.finished = false;
 		},
 		plusMinus() {
 			this.current = ''+this.current
@@ -99,6 +146,7 @@ export default {
 			else {
 				this.current = "-" + this.current;
 			}
+			this.finished = false;
 		},
 
 		equals() {
@@ -111,36 +159,41 @@ export default {
 			else {
 				this.current = eval(this.current);
 			}
+			this.finished = true;
 		},
 
 		sqr() {
 			if (this.isNumber(this.current)) {
-				this.operation = `sqr(${this.current})`
-				this.current = this.current * this.current
+				this.operation = `sqr(${this.current})`;
+				this.current *= this.current;
+				this.finished = true;
 			}
 		},
 		sqrt() {
 			if (this.isNumber(this.current)) {
-				this.operation = `√(${this.current})`
+				this.operation = `√(${this.current})`;
 				this.current = Math.sqrt(this.current);
+				this.finished = true;
 			}
 		},
 		percent() {
 			if (this.isNumber(this.current)) {
-				this.operation = `${this.current}%`
+				this.operation = `${this.current}%`;
 		  		this.current = this.current / 100;
+				this.finished = true;
 			}
 		},
 		inverse() {
 			if (this.isNumber(this.current)) {
-				this.operation = `1/(${this.current})`
+				this.operation = `1/(${this.current})`;
 		  		this.current = 1 / this.current;
+				this.finished = true;
 			}
 		},
 
 		factorial() {
 			if (this.isNumber(this.current)) {
-				this.operation = `fact(${this.current})`
+				this.operation = `fact(${this.current})`;
 				if (this.current == 0) {
 					this.current = "1";
 				} 
@@ -154,35 +207,41 @@ export default {
 					}
 					this.current = number;
 				}
+				this.finished = true;
 			}
 		},
 		abs() {
 			if (this.isNumber(this.current)) {
-				this.operation = `abs(${this.current})`
+				this.operation = `abs(${this.current})`;
 				this.current = Math.abs(this.current);
+				this.finished = true;
 			}
 		},	  
 		pi() {
 			this.operation = 'pi';
-			this.current = (this.current * Math.PI);
+			this.current = Math.PI;
+			this.finished = true;
 		},
 
 		sin() {
 			if (this.isNumber(this.current)) {
-				this.operation = `sin(${this.current})`
+				this.operation = `sin(${this.current})`;
 				this.current = Math.sin(this.current);
+				this.finished = true;
 			}
 		},	  
 		cos() {
 			if (this.isNumber(this.current)) {
-				this.operation = `cos(${this.current})`
+				this.operation = `cos(${this.current})`;
 				this.current = Math.cos(this.current);
+				this.finished = true;
 			}
 		}, 
 		tan() {
 			if (this.isNumber(this.current)) {
-				this.operation = `tan(${this.current})`
+				this.operation = `tan(${this.current})`;
 				this.current = Math.tan(this.current);
+				this.finished = true;
 			}
 		},
 		radians() {
@@ -193,26 +252,29 @@ export default {
 		},
 		degrees() {
 			if (this.isNumber(this.current)) {
-				this.operation = `deg(${this.current})`
-				this.current = this.current * (180 / Math.PI);
+				this.operation = `deg(${this.current})`;
+				this.current = this.formatNumber(this.current * (180 / Math.PI));
 			}
 		},
 
 		log() {
 			if (this.isNumber(this.current)) {
-				this.operation = `log(${this.current})`
+				this.operation = `log(${this.current})`;
 				this.current = Math.log10(this.current);
+				this.finished = true;
 			}
 		}, 
 		ln() {
 			if (this.isNumber(this.current)) {
-				this.operation = `ln(${this.current})`
+				this.operation = `ln(${this.current})`;
 				this.current = Math.log(this.current);
+				this.finished = true;
 			}
 		},  
 		exp() {
 			if (this.isNumber(this.current)) {
 				this.current = Math.exp(this.current);
+				this.finished = true;
 			}
 		},
 		power10() {

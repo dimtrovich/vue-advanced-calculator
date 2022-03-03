@@ -2,7 +2,7 @@
     <div>
         <div class="vac-screen">
 			<div class="w-100 text-right vac-screen-operation">{{ operation }}</div>
-			<div class="w-100 text-right vac-screen-result">{{ current }}</div>
+			<div class="w-100 text-right vac-screen-result">{{ result }}</div>
 		</div>
 		<div>				
 			<div class="d-flex justify-content-between vac-buttons">
@@ -51,22 +51,10 @@
 </template>
 
 <script>
-import translator from '../utils/translations/translator'
 import calculator from '../mixins/calculator'
 
 export default {
 	name: 'StandardCalculator',
 	mixins: [calculator],
-	methods: {
-		/**
-		 * Effectue des traductions dans la langue choisie
-		 * 
-		 * @param {String} key 
-		 * @return {String}
-		 */
-		__vac_translate(key) {
-			return translator(key, this.locale)
-		},
-	}
 }
 </script>
