@@ -34,7 +34,7 @@ export default {
 			document.querySelectorAll('.vac-container[tabindex="-1"]').forEach((el) => {
 				el.addEventListener('keydown', (e) => {
 					const key = e.key
-					if (this.isNumber(key) || ['(', ')', '.'].includes(key)) {
+					if (this.isNumber(key) || ['(', ')', '.', '^'].includes(key)) {
 						this.addElement(key)
 					}
 					if (this.operators.includes(key)) {
@@ -137,5 +137,91 @@ export default {
 		  		this.current = 1 / this.current;
 			}
 		},
+
+		factorial() {
+			if (this.isNumber(this.current)) {
+				this.operation = `fact(${this.current})`
+				if (this.current == 0) {
+					this.current = "1";
+				} 
+				else if (this.current < 0) {
+					this.current = NaN;
+				} 
+				else {
+					let number = 1;
+					for (var i = this.current; i > 0; i--) {
+					  	number *=  i;
+					}
+					this.current = number;
+				}
+			}
+		},
+		abs() {
+			if (this.isNumber(this.current)) {
+				this.operation = `abs(${this.current})`
+				this.current = Math.abs(this.current);
+			}
+		},	  
+		pi() {
+			this.operation = 'pi';
+			this.current = (this.current * Math.PI);
+		},
+
+		sin() {
+			if (this.isNumber(this.current)) {
+				this.operation = `sin(${this.current})`
+				this.current = Math.sin(this.current);
+			}
+		},	  
+		cos() {
+			if (this.isNumber(this.current)) {
+				this.operation = `cos(${this.current})`
+				this.current = Math.cos(this.current);
+			}
+		}, 
+		tan() {
+			if (this.isNumber(this.current)) {
+				this.operation = `tan(${this.current})`
+				this.current = Math.tan(this.current);
+			}
+		},
+		radians() {
+			if (this.isNumber(this.current)) {
+				this.operation = `rad(${this.current})`
+				this.current = this.current * (Math.PI / 180);
+			}
+		},
+		degrees() {
+			if (this.isNumber(this.current)) {
+				this.operation = `deg(${this.current})`
+				this.current = this.current * (180 / Math.PI);
+			}
+		},
+
+		log() {
+			if (this.isNumber(this.current)) {
+				this.operation = `log(${this.current})`
+				this.current = Math.log10(this.current);
+			}
+		}, 
+		ln() {
+			if (this.isNumber(this.current)) {
+				this.operation = `ln(${this.current})`
+				this.current = Math.log(this.current);
+			}
+		},  
+		exp() {
+			if (this.isNumber(this.current)) {
+				this.current = Math.exp(this.current);
+			}
+		},
+		power10() {
+			if (this.isNumber(this.current)) {
+				const operation = `10^(${this.current})`;
+				this.current = `10^${this.current}`;
+				this.equals()
+				this.operation = operation;
+			}
+		}
 	}
 }

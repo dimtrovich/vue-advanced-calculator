@@ -42,16 +42,19 @@
 			</div>
 
 			<standard :locale="locale" v-if="mode == 'standard'" />
+			<scientific :locale="locale" v-if="mode == 'scientific'" />
 		</div>
 	</div>
 </template>
 
 <script>
+import Scientific from './components/Scientific.vue'
 import Standard from './components/Standard.vue'
 import translator from './utils/translations/translator'
 export default {
   	components: { 
-		  Standard 
+		Standard,
+    	Scientific 
 	},
 	name: "VueAdvancedCalculator",
 	props: {
