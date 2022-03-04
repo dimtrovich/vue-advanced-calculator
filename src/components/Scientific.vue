@@ -12,11 +12,11 @@
 				<button class="btn btn-light" @click="backspace()">&larr; Backspace</button>
 			</div>
 			<div class="d-flex justify-content-between vac-buttons">
-				<button class="btn btn-light" :disabled="!isNumber(current)" @click="sin()">sin</button>
-				<button class="btn btn-light" :disabled="!isNumber(current)" @click="cos()">cos</button>
-				<button class="btn btn-light" :disabled="!isNumber(current)" @click="tan()">tan</button>
-				<button class="btn btn-light" :disabled="!isNumber(current)" @click="degrees()">∘</button>
-				<button class="btn btn-light" :disabled="!isNumber(current)" @click="radians()">rad</button>
+				<button class="btn btn-light" :disabled="!isNumber(current)" @click="is_deg = !is_deg">{{ is_deg ? 'DEG' : 'RAD' }}</button>
+				<button class="btn btn-light" :class="{active: is_snd}" @click="is_snd = !is_snd">2<sup>nd</sup></button>
+				<button class="btn btn-light" :disabled="!isNumber(current)" @click="sin()">sin{{ is_snd ? 'h' : '' }}</button>
+				<button class="btn btn-light" :disabled="!isNumber(current)" @click="cos()">cos{{ is_snd ? 'h' : '' }}</button>
+				<button class="btn btn-light" :disabled="!isNumber(current)" @click="tan()">tan{{ is_snd ? 'h' : '' }}</button>
 			</div>
 			<div class="d-flex justify-content-between vac-buttons">
 				<button class="btn btn-light" :disabled="!isNumber(current)" @click="log()">log</button>
@@ -28,7 +28,7 @@
 			<div class="d-flex justify-content-between vac-buttons">
 				<button class="btn btn-light" :disabled="!isNumber(current)" @click="factorial()">n!</button>
 				<button class="btn btn-light" :disabled="!isNumber(current)" @click="abs()">|x|</button>
-				<button class="btn btn-light" :disabled="!isNumber(current)">mod</button>
+				<button class="btn btn-light" :disabled="!isNumber(current)" @click="addElement('MOD')">mod</button>
 				<button class="btn btn-light" @click="addElement('^')">x<sup>y</sup></button>
 				<button class="btn btn-light" :disabled="!isNumber(current)" @click="power10()">10<sup>x</sup></button>
 			</div>

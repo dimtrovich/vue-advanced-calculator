@@ -10,7 +10,9 @@ export default {
 		finished: false,
 		operation: null,
 
-		operators: ['/','*','-','+']
+		operators: ['/','*','-','+'],
+		is_deg: false,
+		is_snd: false,
 	}),
 	computed: {
 		current_last() {
@@ -42,7 +44,7 @@ export default {
 		 * @param {any} x
 		 * @return {Boolean}
 		 */
-		 isNumber(x) {
+		isNumber(x) {
 			return !isNaN(parseFloat(x)) && isFinite(x);
 		},
 		/**
@@ -151,11 +153,20 @@ export default {
 
 		equals() {
 			this.operation = `${this.current} =`
-			if ((this.current).indexOf("^") > -1) {
+			if (this.current.toString().indexOf("^") > -1) {
 				var base = (this.current).slice(0, (this.current).indexOf("^"));
 				var exponent = (this.current).slice((this.current).indexOf("^") + 1);
 				this.current = eval("Math.pow(" + base + "," + exponent + ")");
 			} 
+			else if (this.current.toString().indexOf('MOD') > -1) {
+				const parts = this.current.split('MOD');
+				if (parts.length != 2) {
+					this.current = NaN;
+				}
+				else {
+					this.current = parts[0] % parts[1]
+				}
+			}
 			else {
 				this.current = eval(this.current);
 			}
@@ -225,36 +236,33 @@ export default {
 
 		sin() {
 			if (this.isNumber(this.current)) {
-				this.operation = `sin(${this.current})`;
-				this.current = Math.sin(this.current);
+				this.operation = `sin${this.is_snd ? 'h' : ''}(${this.current} ${this.is_deg ? '°' : 'rad'})`;
+				const current = this.is_deg ? this.toRadians(this.current) : this.current
+				this.current = this.is_snd ? Math.sinh(current) : Math.sin(current);
 				this.finished = true;
 			}
 		},	  
 		cos() {
 			if (this.isNumber(this.current)) {
-				this.operation = `cos(${this.current})`;
-				this.current = Math.cos(this.current);
+				this.operation = `cos${this.is_snd ? 'h' : ''}(${this.current} ${this.is_deg ? '°' : 'rad'})`;
+				const current = this.is_deg ? this.toRadians(this.current) : this.current
+				this.current = this.is_snd ? Math.cosh(current) : Math.cos(current);
 				this.finished = true;
 			}
 		}, 
 		tan() {
 			if (this.isNumber(this.current)) {
-				this.operation = `tan(${this.current})`;
-				this.current = Math.tan(this.current);
+				this.operation = `tan${this.is_snd ? 'h' : ''}(${this.current} ${this.is_deg ? '°' : 'rad'})`;
+				const current = this.is_deg ? this.toRadians(this.current) : this.current
+				this.current = this.is_snd ? Math.tanh(current) : Math.tan(current);
 				this.finished = true;
 			}
 		},
-		radians() {
-			if (this.isNumber(this.current)) {
-				this.operation = `rad(${this.current})`
-				this.current = this.current * (Math.PI / 180);
-			}
+		toRadians(x) {
+			return x * (Math.PI / 180);
 		},
-		degrees() {
-			if (this.isNumber(this.current)) {
-				this.operation = `deg(${this.current})`;
-				this.current = this.formatNumber(this.current * (180 / Math.PI));
-			}
+		toDegrees(x) {
+			return x / (Math.PI / 180);
 		},
 
 		log() {
