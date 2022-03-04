@@ -69,6 +69,8 @@ props: {
 Basic [demo](https://jsfiddle.net/Dimtrovich/xpegj9ys/12/)
 
 # Contribution
+Toutes vos contributions sont vivement attendues. Je serai honoré que vous vous joignez à moi pour d'avantage améliorer ce travail.
+
 1. Clonez le depôt
 2. executez `npm install`
 3. `npm run serve` pour lancer l'exemple de developpement
@@ -76,5 +78,3 @@ Basic [demo](https://jsfiddle.net/Dimtrovich/xpegj9ys/12/)
 5. `npm run build` pour générer les nouveaux bundles js et css
 6. Commitez vos changements + les bundles js et css. Ca devrait etre plus facile de tester sur fiddles, codepen etc
 7. Ouvrez une demande de fusion. Pour plus d'informations referez-vous à [github forking workflow](https://gist.github.com/Chaser324/ce0505fbed06b947d962)
-
-
