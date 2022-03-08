@@ -50,19 +50,20 @@
 <script>
 import Scientific from './components/calculators/Scientific.vue'
 import Standard from './components/calculators/Standard.vue'
-import translator from './utils/translations/translator'
+
+import vac from './mixins/vac'
 export default {
+	name: "VueAdvancedCalculator",
   	components: { 
 		Standard,
     	Scientific 
 	},
-	name: "VueAdvancedCalculator",
+	mixins: [vac],
 	props: {
 		id: {type: String, default: 'vac-' + (new Date).getTime() },
 		title: {type: String, default: 'Vue Advanced Calculator'},
 		description: {type: String, default: 'An advanced scientific calculator for Vue.js'},
 		defaultMode: {type: String, default: 'standard'},
-		locale: { type: String, default: 'fr'}
 	},
 	data: () => ({
 		open_sidebar: false,
@@ -74,15 +75,6 @@ export default {
 	},
 
 	methods: {
-		/**
-		 * Effectue des traductions dans la langue choisie
-		 * 
-		 * @param {String} key 
-		 * @return {String}
-		 */
-		__vac_translate(key) {
-			return translator(key, this.locale)
-		},
 		/**
 		 * Change le type de calculatrice
 		 * 
