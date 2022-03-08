@@ -43,11 +43,13 @@
 
 			<standard :locale="locale" v-if="mode == 'standard'" />
 			<scientific :locale="locale" v-if="mode == 'scientific'" />
+			<date-calculation :locale="locale" v-if="mode == 'date_calculation'" />
 		</div>
 	</div>
 </template>
 
 <script>
+import DateCalculation from './components/calculators/DateCalculation.vue'
 import Scientific from './components/calculators/Scientific.vue'
 import Standard from './components/calculators/Standard.vue'
 
@@ -56,7 +58,8 @@ export default {
 	name: "VueAdvancedCalculator",
   	components: { 
 		Standard,
-    	Scientific 
+    	Scientific,
+    	DateCalculation 
 	},
 	mixins: [vac],
 	props: {
@@ -64,6 +67,7 @@ export default {
 		title: {type: String, default: 'Vue Advanced Calculator'},
 		description: {type: String, default: 'An advanced scientific calculator for Vue.js'},
 		defaultMode: {type: String, default: 'standard'},
+		locale: {type: String, default: 'fr'}
 	},
 	data: () => ({
 		open_sidebar: false,
