@@ -48,8 +48,8 @@
 </template>
 
 <script>
-import Scientific from './components/Scientific.vue'
-import Standard from './components/Standard.vue'
+import Scientific from './components/calculators/Scientific.vue'
+import Standard from './components/calculators/Standard.vue'
 import translator from './utils/translations/translator'
 export default {
   	components: { 

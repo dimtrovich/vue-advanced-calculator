@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import calculator from '../mixins/calculator'
+import calculator from '../../mixins/calculator'
 
 export default {
 	name: 'StandardCalculator',
