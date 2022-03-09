@@ -17,7 +17,47 @@
 			<br>
 			<h6>{{ __vac_translate('difference') }}</h6>
 			<h5 class="font-weight-bold">{{ difference }}</h5>
-			<h5 class="">{{ displayed_difference }}</h5>
+			<h5>{{ displayed_difference }}</h5>
+		</div>
+		<div v-if="type == 'operations'">
+			<div class="row justify-content-around mb-2">
+				<div class="col-5">
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" class="custom-control-input" v-model="operation.type" :id="`${id}_date_calculation_operation_1`" value="add">
+						<label class="custom-control-label" :for="`${id}_date_calculation_operation_1`">{{ __vac_translate('add') }}</label>
+					</div>
+				</div>
+				<div class="col-5">
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" class="custom-control-input" v-model="operation.type" :id="`${id}_date_calculation_operation_2`" value="substract">
+						<label class="custom-control-label" :for="`${id}_date_calculation_operation_2`">{{ __vac_translate('substract') }}</label>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-2">
+				<div class="col-4">
+					<div class="form-group">
+						<label>{{ __vac_translate('years') }}</label>
+						<input type="number" min="0" v-model="operation.years" class="form-control" />
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						<label>{{ __vac_translate('months') }}</label>
+						<input type="number" min="0" v-model="operation.months" class="form-control" />
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						<label>{{ __vac_translate('days') }}</label>
+						<input type="number" min="0" v-model="operation.days" class="form-control" />
+					</div>
+				</div>
+			</div>
+			<br>
+			<h6>{{ __vac_translate('date') }}</h6>
+			<h5 class="font-weight-bold">{{ date_result }}</h5>
+			<h5>{{ displayed_date_result }}</h5>
 		</div>
 	</div>
 </template>
@@ -28,9 +68,15 @@ export default {
 	name: 'DateCalculation',
 	mixins: [vac],
 	data: () => ({
-		type: 'difference',
+		type: 'operations',
 		from: currentDate(),
-		to: currentDate()
+		to: currentDate(),
+		operation: {
+			type: 'add',
+			years: 0,
+			months: 0,
+			days: 0,
+		}
 	}),
 	computed: {
 		/**
@@ -99,6 +145,36 @@ export default {
 				return `1 ${this.__vac_translate('day').toLowerCase()}`;
 			}
 			return `${this.difference_days} ${this.__vac_translate('days').toLowerCase()}`;
+		},
+
+		/**
+		 * Resultat de la date après une option d'ajout ou de soustraction
+		 */
+		date_operation() {
+			let current = new Date(this.from);
+			
+			const days = parseInt(this.operation.days);
+			const months = parseInt(this.operation.months);
+			const years = parseInt(this.operation.years);
+
+			if (this.operation.type == 'add') {
+				current.setDate(current.getDate() + days);
+				current.setMonth(current.getMonth() + months);
+				current.setFullYear(current.getFullYear() + years);
+			}
+			if (this.operation.type == 'substract') {
+				current.setDate(current.getDate() - days);
+				current.setFullYear(current.getFullYear() - years);
+				current.setMonth(current.getMonth() - months);
+			}
+
+			return current;
+		},
+		date_result() {
+			return this.date_operation.toLocaleDateString();
+		},
+		displayed_date_result() {
+			return this.date_operation.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 		}
 	}
 }

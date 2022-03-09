@@ -41,9 +41,9 @@
 				<button class="btn btn-sm btn-light"><i class="fa fa-undo"></i></button>
 			</div>
 
-			<standard :locale="locale" v-if="mode == 'standard'" />
-			<scientific :locale="locale" v-if="mode == 'scientific'" />
-			<date-calculation :locale="locale" v-if="mode == 'date_calculation'" />
+			<standard :locale="locale" :id="id" v-if="mode == 'standard'" />
+			<scientific :locale="locale" :id="id" v-if="mode == 'scientific'" />
+			<date-calculation :locale="locale" :id="id" v-if="mode == 'date_calculation'" />
 		</div>
 	</div>
 </template>
