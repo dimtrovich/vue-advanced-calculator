@@ -18,7 +18,12 @@ Vue-advanced-calculator est composant vuejs avec **aucune dependance externe** q
 C'est vrai que j'ai dis qu'il n'a pas besoin de dependance mais, le style est basé sur bootstrap 4, donc il faudra l'avoir et pour avoir les icônes n'oubliez pas font-awesome 😅
 
 # Demos:
-Basic [demo](https://jsfiddle.net/Dimtrovich/xpegj9ys/12/)
+Basic [demo](https://jsfiddle.net/Dimtrovich/xpegj9ys/14/)
+
+# Notes de version:
+- version [0.1.3](https://www.npmjs.com/package/vue-advanced-calculator/v/0.1.3): Calculatrice standard (publié le 24/02/2022)
+- version [0.1.4](https://www.npmjs.com/package/vue-advanced-calculator/v/0.1.4): Calculatrice scientifique (publié le 03/03/2022)
+- version [0.1.5](https://www.npmjs.com/package/vue-advanced-calculator/v/0.1.5): Calculateur de date (publié le 09/03/2022)
 
 # [Documentation](https://dimtrovich.github.io/vue-advanced-calculator)
 

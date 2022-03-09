@@ -66,7 +66,7 @@ props: {
 ```
 
 # Demos
-Basic [demo](https://jsfiddle.net/Dimtrovich/xpegj9ys/12/)
+Basic [demo](https://jsfiddle.net/Dimtrovich/xpegj9ys/14/)
 
 # Contribution
 Toutes vos contributions sont vivement attendues. Je serai honoré que vous vous joignez à moi pour d'avantage améliorer ce travail.
