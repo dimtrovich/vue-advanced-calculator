@@ -56,7 +56,7 @@ export default {
 						this.percent()
 					}
 					if (key.toLowerCase() == 'c') {
-						this.clear()
+						this.clear(true)
 					}
 				})
 			})
@@ -91,8 +91,10 @@ export default {
 			this.finished = false;
 		},
 		
-		clear() {
-			this.operation = null;
+		clear(all = false) {
+			if (all) {
+				this.operation = null;
+			}
 			this.current = '0';
 			this.finished = false;
 		},

@@ -8,7 +8,7 @@
 			<div class="d-flex justify-content-between vac-buttons">
 				<button class="btn btn-light" :disabled="!isNumber(current)" @click="percent()">%</button>
 				<button class="btn btn-light" @click="clear()">CE</button>
-				<button class="btn btn-light" @click="clear()">C</button>
+				<button class="btn btn-light" @click="clear(true)">C</button>
 				<button class="btn btn-light" @click="backspace()">&larr; Backspace</button>
 			</div>
 			<div class="d-flex justify-content-between vac-buttons">
