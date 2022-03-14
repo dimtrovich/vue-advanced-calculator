@@ -1,5 +1,4 @@
 .vac-container {
-  min-height: 70vh;
   padding-bottom: 0.5em;
   font-size: 14px;
 }
@@ -94,7 +93,7 @@
   font-weight: bold;
 }
 .vac-buttons {
-  width: 85%;
+  width: 95%;
   margin: auto auto;
 }
 .vac-buttons .btn {
