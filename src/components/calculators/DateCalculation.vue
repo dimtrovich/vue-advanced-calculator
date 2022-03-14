@@ -1,5 +1,5 @@
 <template>
-	<div class="p-3">
+	<div class="p-1">
 		<select v-model="type" class="custom-select">
 			<option value="difference">{{ __vac_translate('difference_between_date') }}</option>
 			<option value="operations">{{ __vac_translate('add_or_substract_dayjs') }}</option>
@@ -68,7 +68,7 @@ export default {
 	name: 'DateCalculation',
 	mixins: [vac],
 	data: () => ({
-		type: 'operations',
+		type: 'difference',
 		from: currentDate(),
 		to: currentDate(),
 		operation: {
