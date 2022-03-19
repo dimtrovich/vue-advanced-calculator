@@ -25,6 +25,7 @@ Basic [demo](https://jsfiddle.net/Dimtrovich/xpegj9ys/14/)
 - version [0.1.3](https://www.npmjs.com/package/vue-advanced-calculator/v/0.1.3): Calculatrice standard (publié le 24/02/2022)
 - version [0.1.4](https://www.npmjs.com/package/vue-advanced-calculator/v/0.1.4): Calculatrice scientifique (publié le 03/03/2022)
 - version [0.1.5](https://www.npmjs.com/package/vue-advanced-calculator/v/0.1.5): Calculateur de date (publié le 09/03/2022)
+- version [0.2.0](https://www.npmjs.com/package/vue-advanced-calculator/v/0.2.0): Convertisseur de données (publié le 19/03/2022)
 
 # [Documentation](https://dimtrovich.github.io/vue-advanced-calculator)
 
