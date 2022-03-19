@@ -7,10 +7,6 @@ export default {
 		precision: { type: Number, default: 15}
 	},
 	data: () => ({
-		current: '0',
-		finished: false,
-		operation: null,
-
 		operators: ['/','*','-','+'],
 		is_deg: false,
 		is_snd: false,
@@ -62,21 +58,6 @@ export default {
 			})
 		},
 
-		addElement(element) {
-			if (this.current == '0' && element != '.') {
-				this.current = ''
-			}
-			if (['-Infinity', 'NaN', 'Infinity'].includes(this.current.toString())) {
-				this.operation = null
-				this.current = ''
-			}
-			if (this.operation != null && this.operation != '' && this.isNumber(this.current)) {
-				this.current = ''
-				this.operation = null
-			}
-			this.finished = false;
-			this.current += ''+element
-		},
 		addOperator(operator) {
 			if (['-Infinity', 'NaN', 'Infinity'].includes(this.current.toString())) {
 				this.operation = null
@@ -91,24 +72,6 @@ export default {
 			this.finished = false;
 		},
 		
-		clear(all = false) {
-			if (all) {
-				this.operation = null;
-			}
-			this.current = '0';
-			this.finished = false;
-		},
-		backspace() {
-			if (this.isNumber(this.current) || typeof this.current != 'string') {
-				this.clear()
-				return
-			}
-			this.current = this.current.substring(0, this.current.length - 1);
-			if (this.current == '') {
-				this.current = '0'
-			}
-			this.finished = false;
-		},
 		plusMinus() {
 			this.current = ''+this.current
 			if ( (this.current != '0') && this.current.charAt(0) === "-" )  {

@@ -5,6 +5,11 @@ export default {
 		locale: { type: String, required: true },
 		id: { type: String, required: true },
 	},
+	data: () => ({
+		current: '0',
+		finished: false,
+		operation: null,
+	}),
 	methods: { 
 		/**
 		 * Effectue des traductions dans la langue choisie
@@ -40,5 +45,41 @@ export default {
 			}
 			return result.join('.')
 		},
+
+		addElement(element) {
+			if (this.current == '0' && element != '.') {
+				this.current = ''
+			}
+			if (['-Infinity', 'NaN', 'Infinity'].includes(this.current.toString())) {
+				this.operation = null
+				this.current = ''
+			}
+			if (this.operation != null && this.operation != '' && this.isNumber(this.current)) {
+				this.current = ''
+				this.operation = null
+			}
+			this.finished = false;
+			this.current += ''+element
+		},
+		
+		clear(all = false) {
+			if (all) {
+				this.operation = null;
+			}
+			this.current = '0';
+			this.finished = false;
+		},
+		backspace() {
+			if (this.isNumber(this.current) || typeof this.current != 'string') {
+				// this.clear()
+				// return
+			}
+			this.current = this.current.substring(0, this.current.length - 1);
+			if (this.current == '') {
+				this.current = '0'
+			}
+			this.finished = false;
+		},
+		
 	}
 }

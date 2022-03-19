@@ -44,6 +44,7 @@
 			<standard :locale="locale" :id="id" v-if="mode == 'standard'" />
 			<scientific :locale="locale" :id="id" v-if="mode == 'scientific'" />
 			<date-calculation :locale="locale" :id="id" v-if="mode == 'date_calculation'" />
+			<data-converter :locale="locale" :id="id" v-if="mode == 'data'" />
 		</div>
 	</div>
 </template>
@@ -52,6 +53,7 @@
 import DateCalculation from './components/calculators/DateCalculation.vue'
 import Scientific from './components/calculators/Scientific.vue'
 import Standard from './components/calculators/Standard.vue'
+import Data from './components/converters/Data.vue'
 
 import vac from './mixins/vac'
 export default {
@@ -59,7 +61,8 @@ export default {
   	components: { 
 		Standard,
     	Scientific,
-    	DateCalculation 
+    	DateCalculation,
+    	DataConverter: Data 
 	},
 	mixins: [vac],
 	props: {
