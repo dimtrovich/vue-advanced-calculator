@@ -5,8 +5,6 @@ export default {
 	data: () => ({
 		initial_unit: null,
 		final_unit: null,
-		units: [],
-		equivalence: {}
 	}),
 	computed: {
 		displayed_initial_unit() {
