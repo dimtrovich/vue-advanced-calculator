@@ -27,6 +27,7 @@ Basic [demo](https://jsfiddle.net/Dimtrovich/xpegj9ys/14/)
 - version [0.1.5](https://www.npmjs.com/package/vue-advanced-calculator/v/0.1.5): Calculateur de date (publié le 09/03/2022)
 - version [0.2.0](https://www.npmjs.com/package/vue-advanced-calculator/v/0.2.0): Convertisseur de données (publié le 19/03/2022)
 - version [0.2.1](https://www.npmjs.com/package/vue-advanced-calculator/v/0.2.1): Convertisseur d'heures (publié le 29/03/2022)
+- version [0.2.2](https://www.npmjs.com/package/vue-advanced-calculator/v/0.2.2): Convertisseur de poids et masses (publié le 01/04/2022)
 
 # [Documentation](https://dimtrovich.github.io/vue-advanced-calculator)
 
