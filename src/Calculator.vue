@@ -46,6 +46,7 @@
 			<date-calculation :locale="locale" :id="id" v-if="mode == 'date_calculation'" />
 			<data-converter :locale="locale" :id="id" v-if="mode == 'data'" />
 			<hour :locale="locale" :id="id" v-if="mode == 'hour'" />
+			<weight-and-mass :locale="locale" :id="id" v-if="mode == 'weight_and_mass'" />
 		</div>
 	</div>
 </template>
@@ -56,6 +57,7 @@ import Scientific from './components/calculators/Scientific.vue'
 import Standard from './components/calculators/Standard.vue'
 import Data from './components/converters/Data.vue'
 import Hour from './components/converters/Hour.vue'
+import WeightAndMass from './components/converters/WeightAndMass.vue'
 
 import vac from './mixins/vac'
 export default {
@@ -65,7 +67,8 @@ export default {
     	Scientific,
     	DateCalculation,
     	DataConverter: Data,
-    	Hour 
+    	Hour,
+    	WeightAndMass 
 	},
 	mixins: [vac],
 	props: {
