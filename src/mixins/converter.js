@@ -24,7 +24,7 @@ export default {
 			if (!this.isNumber(result)) {
 				return 0
 			}
-			return result
+			return this.formatNumber(result, this.precision)
 		}
 	},
 	mounted() {

@@ -26,7 +26,7 @@
 		</div>
 		<div class="vac-screen outset">
 			<div class="w-100 text-right vac-screen-operation">{{ displayed_final_unit }}</div>
-			<div class="w-100 text-right vac-screen-result">{{ Math.round(result) }}</div>
+			<div class="w-100 text-right vac-screen-result">{{ result }}</div>
 		</div>
 		<div class="col-10 offset-1 px-0">
 			<div class="d-flex justify-content-end vac-buttons">
