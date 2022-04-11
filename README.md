@@ -26,8 +26,9 @@ Basic [demo](https://jsfiddle.net/Dimtrovich/xpegj9ys/14/)
 - version [0.1.4](https://www.npmjs.com/package/vue-advanced-calculator/v/0.1.4): Calculatrice scientifique (publié le 03/03/2022)
 - version [0.1.5](https://www.npmjs.com/package/vue-advanced-calculator/v/0.1.5): Calculateur de date (publié le 09/03/2022)
 - version [0.2.0](https://www.npmjs.com/package/vue-advanced-calculator/v/0.2.0): Convertisseur de données (publié le 19/03/2022)
-- version [0.2.1](https://www.npmjs.com/package/vue-advanced-calculator/v/0.2.1): Convertisseur d'heures (publié le 29/03/2022)
-- version [0.2.2](https://www.npmjs.com/package/vue-advanced-calculator/v/0.2.2): Convertisseur de poids et masses (publié le 01/04/2022)
+- version [0.2.1](https://github.com/dimtrovich/vue-advanced-calculator/compare/51aad8f..0f702e0): Convertisseur d'heures (publié le 29/03/2022)
+- version [0.2.2](https://github.com/dimtrovich/vue-advanced-calculator/compare/0f702e0..88d7206): Convertisseur de poids et masses (publié le 01/04/2022)
+- version [0.2.3](https://github.com/dimtrovich/vue-advanced-calculator/compare/88d7206..596c9ef): Convertisseur de surfaces (publié le 11/04/2022)
 
 # [Documentation](https://dimtrovich.github.io/vue-advanced-calculator)
 
