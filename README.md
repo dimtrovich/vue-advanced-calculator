@@ -5,7 +5,7 @@
   <a href="https://www.npmjs.com/package/vue-advanced-calculator"><img src="https://img.shields.io/npm/v/vue-advanced-calculator.svg"></a>
   <a href="https://www.npmjs.com/package/vue-advanced-calculator"><img src="https://img.shields.io/npm/dt/vue-advanced-calculator.svg"></a>
 <a href='https://coveralls.io/github/dimtrovich/vue-advanced-calculator?branch=master'><img src='https://coveralls.io/repos/github/dimtrovich/vue-advanced-calculator/badge.svg?branch=master' alt='Coverage Status' /></a>
-  <a href="https://github.com/dimtrovich/vue-advanced-calculator/blob/master/LICENCE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+  <a href="https://github.com/dimtrovich/vue-advanced-calculator/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
   <a href="http://img.badgesize.io/dimtrovich/vue-advanced-calculator/master/dist/vue-advanced-calculator.min.js.svg?compression=gzip&style=flat-square">
     <img src="http://img.badgesize.io/dimtrovich/vue-advanced-calculator/master/dist/vue-advanced-calculator.min.js.svg?compression=gzip&style=flat-square">
   </a>
@@ -30,6 +30,7 @@ Basic [demo](https://jsfiddle.net/Dimtrovich/xpegj9ys/14/)
 - version [0.2.2](https://github.com/dimtrovich/vue-advanced-calculator/compare/0f702e0..88d7206): Convertisseur de poids et masses (publié le 01/04/2022)
 - version [0.2.3](https://github.com/dimtrovich/vue-advanced-calculator/compare/88d7206..596c9ef): Convertisseur de surfaces (publié le 11/04/2022)
 - version [0.2.4](https://github.com/dimtrovich/vue-advanced-calculator/compare/596c9ef..4b819f0): Convertisseur de longueurs (publié le 09/05/2022)
+- version [0.2.5](https://github.com/dimtrovich/vue-advanced-calculator/compare/4b819f0..3df1b73): Convertisseur de volumes (publié le 11/05/2022)
 
 # [Documentation](https://dimtrovich.github.io/vue-advanced-calculator)
 
