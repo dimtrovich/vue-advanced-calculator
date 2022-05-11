@@ -16,9 +16,10 @@
 					<br>
 					<h5 class="font-weight-bold text-muted h6">{{ __vac_translate('converter') }}</h5>
 					<li><a href="#" :class="{active: mode == 'currency'}" @click.prevent="changeMode('currency')"><i class="fa fa-dollar-sign"></i> {{ __vac_translate('currency') }}</a></li>
+					<li><a href="#" :class="{active: mode == 'volume'}" @click.prevent="changeMode('volume')"><i class="fa fa-cube"></i> {{ __vac_translate('volume') }}</a></li>
 					<li><a href="#" :class="{active: mode == 'length'}" @click.prevent="changeMode('length')"><i class="fa fa-ruler-combined"></i> {{ __vac_translate('length') }}</a></li>
-					<li><a href="#" :class="{active: mode == 'area'}" @click.prevent="changeMode('area')"><i class="fa fa-th"></i> {{ __vac_translate('area') }}</a></li>
 					<li><a href="#" :class="{active: mode == 'weight_and_mass'}" @click.prevent="changeMode('weight_and_mass')"><i class="fa fa-weight-hanging"></i> {{ __vac_translate('weight_and_mass') }}</a></li>
+					<li><a href="#" :class="{active: mode == 'area'}" @click.prevent="changeMode('area')"><i class="fa fa-th"></i> {{ __vac_translate('area') }}</a></li>
 					<li><a href="#" :class="{active: mode == 'hour'}" @click.prevent="changeMode('hour')"><i class="fa fa-clock"></i> {{ __vac_translate('hour') }}</a></li>
 					<li><a href="#" :class="{active: mode == 'data'}" @click.prevent="changeMode('data')"><i class="fa fa-hdd"></i> {{ __vac_translate('data') }}</a></li>
 				</ul>
@@ -49,6 +50,7 @@
 			<weight-and-mass :locale="locale" :id="id" v-if="mode == 'weight_and_mass'" />
 			<area-converter :locale="locale" :id="id" v-if="mode == 'area'" />
 			<length :locale="locale" :id="id" v-if="mode == 'length'" />
+			<volume :locale="locale" :id="id" v-if="mode == 'volume'" />
 		</div>
 	</div>
 </template>
@@ -61,6 +63,7 @@ import Area from './components/converters/Area.vue'
 import Data from './components/converters/Data.vue'
 import Hour from './components/converters/Hour.vue'
 import Length from './components/converters/Length.vue'
+import Volume from './components/converters/Volume.vue'
 import WeightAndMass from './components/converters/WeightAndMass.vue'
 
 import vac from './mixins/vac'
@@ -74,7 +77,8 @@ export default {
     	Hour,
     	WeightAndMass,
     	AreaConverter: Area,
-    	Length 
+    	Length,
+    	Volume 
 	},
 	mixins: [vac],
 	props: {
