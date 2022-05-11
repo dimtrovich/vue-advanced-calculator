@@ -6,7 +6,7 @@
   <a href="https://www.npmjs.com/package/vue-advanced-calculator"><img src="https://img.shields.io/npm/v/vue-advanced-calculator.svg"></a>
   <a href="https://www.npmjs.com/package/vue-advanced-calculator"><img src="https://img.shields.io/npm/dt/vue-advanced-calculator.svg"></a>
 <a href='https://coveralls.io/github/dimtrovich/vue-advanced-calculator?branch=master'><img src='https://coveralls.io/repos/github/dimtrovich/vue-advanced-calculator/badge.svg?branch=master' alt='Coverage Status' /></a>
-  <a href="https://github.com/dimtrovich/vue-advanced-calculator/blob/master/LICENCE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+  <a href="https://github.com/dimtrovich/vue-advanced-calculator/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
   <a href="http://img.badgesize.io/dimtrovich/vue-advanced-calculator/master/dist/vue-advanced-calculator.min.js.svg?compression=gzip&style=flat-square">
     <img src="http://img.badgesize.io/dimtrovich/vue-advanced-calculator/master/dist/vue-advanced-calculator.min.js.svg?compression=gzip&style=flat-square">
   </a>
@@ -28,7 +28,7 @@ C'est vrai que j'ai dis qu'il n'a pas besoin de dependance mais, le style est ba
 Téléchargez les fichiers css et js à partir du dossier `dist` ou utilisez directement celui disponible sur github
 ```html
 <link rel="stylesheet" href="https://unpkg.com/vue-advanced-calculator/dist/vue-advanced-calculator.min.css">
-<script src="https://unpkg.com/vue-advanced-calculator/dist/vue-advanced-calculator.js"></script>
+<script src="https://unpkg.com/vue-advanced-calculator/dist/vue-advanced-calculator.min.js"></script>
 ```
 ## Chargement du composant
 ```js
@@ -40,7 +40,8 @@ Vue.use(VueAdvancedCalculator)
 //Chargement local
 import {VueAdvancedCalculator} from 'vue-advanced-calculator'
 import 'vue-advanced-calculator/dist/vue-advanced-calculator.min.css'
-//component code
+
+//Intégration du composant
 components: {
   VueAdvancedCalculator
 }
