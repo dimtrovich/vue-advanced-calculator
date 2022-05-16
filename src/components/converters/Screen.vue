@@ -64,7 +64,16 @@ export default {
 	mixins: [converter],
 	props: {
 		units: {type: Array, required: true},
-		equivalence: {type: Object, required: true}
+		equivalence: {type: Object, required: true},
+		converter: {type: Function}
+	},
+	methods: {
+		convert(number, from, to) {
+			if (!this.converter) {
+				return (parseFloat(number) * this.equivalence[to]) / this.equivalence[from]
+			}
+			return this.converter(number, from, to)
+		}
 	}
 }
 </script>

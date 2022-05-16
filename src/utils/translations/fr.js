@@ -76,6 +76,7 @@ export default {
 	square_yards: 'Yards carré',
 	standard: "Standard",
 	substract: 'Soustraire',
+	temperature: 'Température',
 	to: 'A',
 	volume: 'Volume',
 	week: 'Semaine',
