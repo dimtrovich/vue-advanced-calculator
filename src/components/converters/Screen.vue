@@ -1,8 +1,8 @@
 <template>
 	<div class="p-1">
-		<div class="row">
-			<div class="col-6">
-				<div class="form-group mt-3">
+		<div class="row mt-3">
+			<div class="col-5">
+				<div class="form-group">
 					<label>{{ __vac_translate('initial_unit') }}</label>
 					<select v-model="initial_unit" class="custom-select">
 						<option disabled selected>{{ __vac_translate('select_the_initial_unit') }}</option>
@@ -10,8 +10,14 @@
 					</select>
 				</div>
 			</div>
-			<div class="col-6">
-				<div class="form-group mt-3">
+			<div class="col-2">
+				<div class="form-group">
+					<label>&nbsp;</label>
+					<button class="mt-1 btn btn-light btn-icon btn-sm" @click.prevent="toggleUnits"><i class="fa fa-exchange-alt"></i></button>
+				</div>
+			</div>
+			<div class="col-5">
+				<div class="form-group">
 					<label>{{ __vac_translate('final_unit') }}</label>
 					<select v-model="final_unit" class="custom-select">
 						<option disabled selected>{{ __vac_translate('select_the_final_unit') }}</option>
@@ -64,15 +70,13 @@ export default {
 	mixins: [converter],
 	props: {
 		units: {type: Array, required: true},
-		equivalence: {type: Object, required: true},
-		converter: {type: Function}
+		equivalence: {type: Object, required: true}
 	},
 	methods: {
-		convert(number, from, to) {
-			if (!this.converter) {
-				return (parseFloat(number) * this.equivalence[to]) / this.equivalence[from]
-			}
-			return this.converter(number, from, to)
+		toggleUnits() {
+			const tmp = this.final_unit 
+			this.final_unit = this.initial_unit
+			this.initial_unit = tmp
 		}
 	}
 }
