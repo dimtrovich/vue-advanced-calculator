@@ -2,6 +2,9 @@ import vac from './vac'
 
 export default {
 	mixins: [vac],
+	props: {
+		converter: {type: Function}
+	},
 	data: () => ({
 		initial_unit: null,
 		final_unit: null,
@@ -52,7 +55,17 @@ export default {
 		},
 
 		convert(number, from, to) {
-			return (parseFloat(number) * this.equivalence[to]) / this.equivalence[from]
+			number = parseFloat(number)
+			if (from == null || from === undefined || to == null || to === undefined) {
+				return 0
+			}
+			if (from == to) {
+				return number
+			}
+			if (!this.converter) {
+				return (number * this.equivalence[to]) / this.equivalence[from]
+			}
+			return this.converter(number, from, to)
 		}
 	}
 }

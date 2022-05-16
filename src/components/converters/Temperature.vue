@@ -26,24 +26,21 @@ export default {
 	},
 	methods: { 
 		convert(number, from, to) {
-			number = parseFloat(number)
 			if (from == 'c') {
 				if (to == 'f') {
 					return (number * 1.8) + 32
 				}
 				return number + 273.15
 			}
-			else if (to == 'c') {
+			if (to == 'c') {
 				if (from == 'f') {
 					return (number - 32) / 1.8
 				}
 				return number - 273.15
 			}
-			else {
-				const tmp = this.convert(number, from, 'c')
+			const tmp = this.convert(number, from, 'c')
 
-				return this.convert(tmp, 'c', to)
-			}
+			return this.convert(tmp, 'c', to)
 		}
 	}
 }
