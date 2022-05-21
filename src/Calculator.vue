@@ -20,6 +20,7 @@
 					<li><a href="#" :class="{active: mode == 'length'}" @click.prevent="changeMode('length')"><i class="fa fa-ruler-combined"></i> {{ __vac_translate('length') }}</a></li>
 					<li><a href="#" :class="{active: mode == 'weight_and_mass'}" @click.prevent="changeMode('weight_and_mass')"><i class="fa fa-weight-hanging"></i> {{ __vac_translate('weight_and_mass') }}</a></li>
 					<li><a href="#" :class="{active: mode == 'temperature'}" @click.prevent="changeMode('temperature')"><i class="fa fa-thermometer-half"></i> {{ __vac_translate('temperature') }}</a></li>
+					<li><a href="#" :class="{active: mode == 'energy'}" @click.prevent="changeMode('energy')"><i class="fa fa-fire"></i> {{ __vac_translate('energy') }}</a></li>
 					<li><a href="#" :class="{active: mode == 'area'}" @click.prevent="changeMode('area')"><i class="fa fa-th"></i> {{ __vac_translate('area') }}</a></li>
 					<li><a href="#" :class="{active: mode == 'hour'}" @click.prevent="changeMode('hour')"><i class="fa fa-clock"></i> {{ __vac_translate('hour') }}</a></li>
 					<li><a href="#" :class="{active: mode == 'data'}" @click.prevent="changeMode('data')"><i class="fa fa-hdd"></i> {{ __vac_translate('data') }}</a></li>
@@ -61,6 +62,7 @@ import Data from './components/converters/Data.vue'
 import Hour from './components/converters/Hour.vue'
 import Length from './components/converters/Length.vue'
 import Temperature from './components/converters/Temperature.vue'
+import Energy from './components/converters/Energy.vue'
 import Volume from './components/converters/Volume.vue'
 import WeightAndMass from './components/converters/WeightAndMass.vue'
 
@@ -77,7 +79,8 @@ export default {
     	AreaConverter: Area,
     	Length,
     	Volume,
-		Temperature
+		Temperature,
+		Energy
 	},
 	mixins: [vac],
 	props: {
