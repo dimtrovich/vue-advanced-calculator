@@ -7,7 +7,7 @@ import Screen from './Screen.vue'
 import vac from '../../mixins/vac'
 
 export default {
-	name: 'Area',
+	name: 'Angle',
  	components: { Screen },
 	mixins: [vac],
 	data() {

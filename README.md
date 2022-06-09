@@ -33,7 +33,7 @@ Basic [demo](https://jsfiddle.net/Dimtrovich/xpegj9ys/14/)
 - version [0.2.5](https://github.com/dimtrovich/vue-advanced-calculator/compare/4b819f0..3df1b73): Convertisseur de volumes (publié le 11/05/2022)
 - version [0.2.6](https://github.com/dimtrovich/vue-advanced-calculator/compare/3df1b73..13f8bfb): Convertisseur de températures (publié le 16/05/2022)
 - version [0.2.7](https://github.com/dimtrovich/vue-advanced-calculator/compare/13f8bfb..3c5eb2f): Convertisseur d'energies (publié le 21/05/2022)
-- version [0.2.8](https://github.com/dimtrovich/vue-advanced-calculator/compare/3c5eb2f..8e17890): Convertisseur d'energies (publié le 09/06/2022)
+- version [0.2.8](https://github.com/dimtrovich/vue-advanced-calculator/compare/3c5eb2f..8e17890): Convertisseur d'angles (publié le 09/06/2022)
 
 # [Documentation](https://dimtrovich.github.io/vue-advanced-calculator)
 
