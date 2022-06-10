@@ -24,6 +24,7 @@
 					<li><a href="#" :class="{active: mode == 'area'}" @click.prevent="changeMode('area')"><i class="fa fa-th"></i> {{ __vac_translate('area') }}</a></li>
 					<li><a href="#" :class="{active: mode == 'hour'}" @click.prevent="changeMode('hour')"><i class="fa fa-clock"></i> {{ __vac_translate('hour') }}</a></li>
 					<li><a href="#" :class="{active: mode == 'data'}" @click.prevent="changeMode('data')"><i class="fa fa-hdd"></i> {{ __vac_translate('data') }}</a></li>
+					<li><a href="#" :class="{active: mode == 'pressure'}" @click.prevent="changeMode('pressure')"><i class="fa fa-tachometer-alt"></i> {{ __vac_translate('pressure') }}</a></li>
 					<li><a href="#" :class="{active: mode == 'angle'}" @click.prevent="changeMode('angle')"><i class="fa fa-less-than"></i> {{ __vac_translate('angle') }}</a></li>
 				</ul>
 			</div>
@@ -67,6 +68,7 @@ import Energy from './components/converters/Energy.vue'
 import Volume from './components/converters/Volume.vue'
 import WeightAndMass from './components/converters/WeightAndMass.vue'
 import Angle from './components/converters/Angle.vue'
+import Pressure from './components/converters/Pressure.vue'
 
 import vac from './mixins/vac'
 export default {
@@ -83,7 +85,8 @@ export default {
     	Volume,
 		Temperature,
 		Energy,
-    	Angle
+    	Angle,
+    	Pressure
 	},
 	mixins: [vac],
 	props: {
