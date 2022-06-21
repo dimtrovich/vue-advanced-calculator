@@ -23,6 +23,7 @@
 					<li><a href="#" :class="{active: mode == 'energy'}" @click.prevent="changeMode('energy')"><i class="fa fa-fire"></i> {{ __vac_translate('energy') }}</a></li>
 					<li><a href="#" :class="{active: mode == 'area'}" @click.prevent="changeMode('area')"><i class="fa fa-th"></i> {{ __vac_translate('area') }}</a></li>
 					<li><a href="#" :class="{active: mode == 'hour'}" @click.prevent="changeMode('hour')"><i class="fa fa-clock"></i> {{ __vac_translate('hour') }}</a></li>
+					<li><a href="#" :class="{active: mode == 'power'}" @click.prevent="changeMode('power')"><i class="fa fa-bolt"></i> {{ __vac_translate('power') }}</a></li>
 					<li><a href="#" :class="{active: mode == 'data'}" @click.prevent="changeMode('data')"><i class="fa fa-hdd"></i> {{ __vac_translate('data') }}</a></li>
 					<li><a href="#" :class="{active: mode == 'pressure'}" @click.prevent="changeMode('pressure')"><i class="fa fa-tachometer-alt"></i> {{ __vac_translate('pressure') }}</a></li>
 					<li><a href="#" :class="{active: mode == 'angle'}" @click.prevent="changeMode('angle')"><i class="fa fa-less-than"></i> {{ __vac_translate('angle') }}</a></li>
@@ -69,25 +70,27 @@ import Volume from './components/converters/Volume.vue'
 import WeightAndMass from './components/converters/WeightAndMass.vue'
 import Angle from './components/converters/Angle.vue'
 import Pressure from './components/converters/Pressure.vue'
+import Power from './components/converters/Power.vue'
 
 import vac from './mixins/vac'
 export default {
 	name: "VueAdvancedCalculator",
-  	components: { 
+  	components: {
 		Standard,
-    	Scientific,
-    	DateCalculation,
-    	DataConverter: Data,
-    	Hour,
-    	WeightAndMass,
-    	AreaConverter: Area,
-    	Length,
-    	Volume,
+		Scientific,
+		DateCalculation,
+		DataConverter: Data,
+		Hour,
+		WeightAndMass,
+		AreaConverter: Area,
+		Length,
+		Volume,
 		Temperature,
 		Energy,
-    	Angle,
-    	Pressure
-	},
+		Angle,
+		Pressure,
+		Power
+},
 	mixins: [vac],
 	props: {
 		id: {type: String, default: 'vac-' + (new Date).getTime() },

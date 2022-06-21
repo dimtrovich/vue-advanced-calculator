@@ -12,8 +12,8 @@
 			</div>
 			<div class="col-2">
 				<div class="form-group">
-					<label>&nbsp;</label>
-					<button class="mt-1 btn btn-light btn-icon btn-sm" @click.prevent="toggleUnits"><i class="fa fa-exchange-alt"></i></button>
+					<label style="visibility:hidden !important; opacity: 0 !important;">Hide</label>
+					<button class="btn btn-light btn-icon btn-sm" @click.prevent="toggleUnits"><i class="fa fa-exchange-alt"></i></button>
 				</div>
 			</div>
 			<div class="col-5">
